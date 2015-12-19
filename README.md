@@ -1,4 +1,0 @@
-translator
-==========
-
-words translator
