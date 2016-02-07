@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import Session.ConfigEntity;
 
 import AndroidFilesType.FilesType.AndroidFile;
@@ -17,10 +17,10 @@ public class Session implements ISession {
 
 	private ConfigEntity configAppFile;
 
-	private List<SearchEnteti> usrWordList;
+	private List<SearchEntity> usrWordList;
 
 	public Session() {
-		this.usrWordList   = new ArrayList<SearchEnteti>();
+		this.usrWordList   = new ArrayList<SearchEntity>();
 		this.configAppFile = new ConfigEntity();
 	}
 
@@ -115,7 +115,7 @@ public class Session implements ISession {
 		this.usrWordList = this.source.parsUserDictionary();
 	}
 
-	public List<SearchEnteti> getList() {
+	public List<SearchEntity> getList() {
 		return this.usrWordList;
 	}
 

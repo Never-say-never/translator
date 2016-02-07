@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import AndroidFilesType.FilesType.AssetsFile;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import Search.ProcessSearch.SearchEntetis.SearchWord;
 import Session.ConfigEntity;
 import Session.SessionCommons.ISessionLoader;
@@ -89,9 +89,9 @@ public class SessionPreloader implements ISessionLoader {
 	}
 
 	@Override
-	public List<SearchEnteti> parsUserDictionary() {
+	public List<SearchEntity> parsUserDictionary() {
 		if (!this.contentIsValid()) {
-			List<SearchEnteti> tmp = new ArrayList<SearchEnteti>();
+			List<SearchEntity> tmp = new ArrayList<SearchEntity>();
 			tmp.add(new SearchWord(null));
 			return tmp;
 		}
@@ -102,8 +102,8 @@ public class SessionPreloader implements ISessionLoader {
 		return this.cleareList(list);
 	}
 
-	private List<SearchEnteti> cleareList(String[] arr) {
-		List<SearchEnteti> tmpList = new ArrayList<SearchEnteti>();
+	private List<SearchEntity> cleareList(String[] arr) {
+		List<SearchEntity> tmpList = new ArrayList<SearchEntity>();
 		for (String el : arr) {
 			if (el != null | el.length() != 0) {
 				tmpList.add(new SearchWord(el));

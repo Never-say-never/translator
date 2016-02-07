@@ -3,7 +3,7 @@ package Session.SessionCommons;
 import java.util.List;
 
 import AndroidFilesType.FilesType.AssetsFile;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import Session.ConfigEntity;
 
 public interface ISessionLoader extends ISessionLoaderPoore{
@@ -19,5 +19,5 @@ public interface ISessionLoader extends ISessionLoaderPoore{
 	public abstract void boostLoadExternalDictionary(
 			AssetsFile externalDictionary);
 
-	public abstract List<SearchEnteti> parsUserDictionary();
+	public abstract List<SearchEntity> parsUserDictionary();
 }

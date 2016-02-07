@@ -6,11 +6,11 @@ import java.util.List;
 
 import AndroidFilesType.FilesType.SDCardFile;
 import AppliacationManager.TranslateProcessManager;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 
 public class ProcessSearch {
 	
-	private SearchEnteti source;
+	private SearchEntity source;
 	
 	private List<String> expList;
 	
@@ -19,7 +19,7 @@ public class ProcessSearch {
 	 * SearchWord       - 'apple'
 	 * SearchExpression - 'i am eat apple'
 	 * */
-	public void search(SearchEnteti typeIs) {
+	public void search(SearchEntity typeIs) {
 		if(!this.validateWord(typeIs.getExp())){
 			TranslateProcessManager.appMessage("search() :: return");
 			return;
@@ -104,7 +104,7 @@ public class ProcessSearch {
 		
 	}
 	
-	public SearchEnteti	getSearchEntity(){
+	public SearchEntity getSearchEntity(){
 		return this.source;
 	}
 	

@@ -1,7 +1,7 @@
 package Search;
 
 import Search.ProcessSearch.ProcessSearch;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import Search.ProcessSearch.SearchEntetis.SearchWord;
 import AppliacationManager.TranslateProcessManager;
 
@@ -14,7 +14,7 @@ public class Search implements ISearch {
 	}
 	
 	/* first entry of search process */
-	public SearchEnteti searchProcess(String word) {
+	public SearchEntity searchProcess(String word) {
 		/* for debug */
 		TranslateProcessManager.appMessage(word);
 		
@@ -33,7 +33,7 @@ public class Search implements ISearch {
 		return null;
 	}
 	
-	private SearchEnteti typeIs(String entety){
+	private SearchEntity typeIs(String entety){
 		/* choose the type of expression now only one type */
 		return new SearchWord(entety);
 	}

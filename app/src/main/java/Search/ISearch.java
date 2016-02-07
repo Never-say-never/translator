@@ -1,6 +1,6 @@
 package Search;
 
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 
 public interface ISearch {
 	
@@ -8,6 +8,6 @@ public interface ISearch {
 	
 	public final String EMPTY_REZULT = "Not found";
 	
-	public abstract SearchEnteti searchProcess(String word);
+	public abstract SearchEntity searchProcess(String word);
 	
 }

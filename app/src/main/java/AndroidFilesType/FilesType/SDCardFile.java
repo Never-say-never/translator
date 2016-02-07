@@ -89,8 +89,8 @@ public class SDCardFile extends AndroidFile {
 		String lineFromFile   = null;
 		try {
 			while ((lineFromFile = reader.readLine()) != null) {
-				//tabsContent.add(this.toUtf(lineFromFile));
-				tabsContent.add(lineFromFile);
+				tabsContent.add(this.toUtf(lineFromFile));
+				//tabsContent.add(lineFromFile);
 			}
 			stream.close();
 			reader.close();

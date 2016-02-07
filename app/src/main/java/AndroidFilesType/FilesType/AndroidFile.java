@@ -39,16 +39,16 @@ public abstract class AndroidFile implements IFile {
 	}
 
 	protected String toUtf(String primalLine) {
-		String compliteLine = null;
+		String completeLine = null;
 		try {
-			byte[] bytes = primalLine.getBytes("ISO-8859-1");
-			compliteLine = new String(bytes, "utf-8");
+			byte[] bytes = primalLine.getBytes();
+			completeLine = new String(bytes, "utf-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return compliteLine;
+		return completeLine;
 	}
 
 	protected OutputStreamWriter initFileWritter(String fileName)

@@ -3,7 +3,7 @@ package Search.ProcessSearch.SearchEntetis;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchWord implements SearchEnteti {
+public class SearchWord implements SearchEntity {
 
 	private String expression;
 	

@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import AppliacationManager.TranslateProcessManager;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,19 +27,19 @@ public class HistoryListAdapter extends BaseAdapter {
 	
 	private LayoutInflater lInflater;
 	
-	private List<SearchEnteti> objects;
+	private List<SearchEntity> objects;
 
-	public HistoryListAdapter(Context context, List<SearchEnteti> list, boolean _empty) {
+	public HistoryListAdapter(Context context, List<SearchEntity> list, boolean _empty) {
 		ctx = context;
 		objects   = list;
 		lInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
-	public List<SearchEnteti> getList(){
-		return (List<SearchEnteti>) this.objects;
+	public List<SearchEntity> getList(){
+		return (List<SearchEntity>) this.objects;
 	}
 	
-	public void addObject(SearchEnteti obj) {
+	public void addObject(SearchEntity obj) {
 		this.objects.add(obj);
 	}
 
@@ -129,10 +128,10 @@ public class HistoryListAdapter extends BaseAdapter {
 		}
 	};
 
-	public ArrayList<SearchEnteti> getBox() {
-		ArrayList<SearchEnteti> box = new ArrayList<SearchEnteti>();
+	public ArrayList<SearchEntity> getBox() {
+		ArrayList<SearchEntity> box = new ArrayList<SearchEntity>();
 		for (int ix = 0; ix < objects.size(); ++ix) {
-			SearchEnteti w = (SearchEnteti) objects.get(ix);
+			SearchEntity w = (SearchEntity) objects.get(ix);
 			if(w.checkChecked())
 				box.add(objects.get(ix));
 		}
@@ -141,7 +140,7 @@ public class HistoryListAdapter extends BaseAdapter {
 	}
 	
 	public boolean isChecked(){
-		for(SearchEnteti e : objects){
+		for(SearchEntity e : objects){
 			if(e.checkChecked())
 				return true;
 		}
@@ -150,10 +149,10 @@ public class HistoryListAdapter extends BaseAdapter {
 	}
 	
 	public void deleteItem(){
-		List<SearchEnteti> objectsT = new ArrayList<SearchEnteti>();
+		List<SearchEntity> objectsT = new ArrayList<SearchEntity>();
 		
 		for (int ix = 0; ix < objects.size() - 1; ++ix) {
-			SearchEnteti enttity = (SearchEnteti) this.objects.get(ix);
+			SearchEntity enttity = (SearchEntity) this.objects.get(ix);
 			System.out.println(" is :" + ix + " " + enttity.getExp() + " " + enttity.checkChecked());
 			
 			if(enttity.checkChecked() == false){

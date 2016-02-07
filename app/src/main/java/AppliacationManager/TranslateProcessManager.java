@@ -3,7 +3,7 @@ package AppliacationManager;
 import Adapters.HistoryListAdapter;
 import AndroidFilesType.FilesType.SDCardFile;
 import Search.Search;
-import Search.ProcessSearch.SearchEntetis.SearchEnteti;
+import Search.ProcessSearch.SearchEntetis.SearchEntity;
 import Session.SessionProcessManager;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -18,7 +18,7 @@ import com.example.translateok.MainActivity;
 
 public class TranslateProcessManager {
 
-	private SessionProcessManager sessionMAnager;
+	private SessionProcessManager sessionManager;
 
 	private HistoryListAdapter boxAdapter;
 
@@ -45,7 +45,7 @@ public class TranslateProcessManager {
 	public static final String APP_MSG = "app_call :: ";
 
 	public TranslateProcessManager(MainActivity main) {
-		this.sessionMAnager = new SessionProcessManager();
+		this.sessionManager = new SessionProcessManager();
 		this.search 		= new Search();
 		progress  			= main.getProgress();
 		TranslateProcessManager.main = main;
@@ -67,7 +67,7 @@ public class TranslateProcessManager {
 			@Override
 			public void run() {
 				progress.incrementProgressBy(11);
-				sessionMAnager.startSession();
+				sessionManager.startSession();
 				//createListView();
 				systemLoaded = true;
 				progress.incrementProgressBy(1);
@@ -121,19 +121,19 @@ public class TranslateProcessManager {
 
 	public void createListView() {
 		appMessage("createListView()");
-
-		for (SearchEnteti str : sessionMAnager.getSource().getList())
-			System.out.println("befor::" + str.getExp());
+		for (SearchEntity str : sessionManager.getSource().getList()) {
+			System.out.println("before ::" + str.getExp());
+		}
 
 		this.boxAdapter = new HistoryListAdapter(MainActivity.context,
-				sessionMAnager.getSource().getList(), false);
+				sessionManager.getSource().getList(), false);
 
 		main.getListViuw().setAdapter(boxAdapter);
 		main.getListViuw().setVisibility(View.VISIBLE);
 	}
 
 	public String search(String wordFromBuffer) {
-		SearchEnteti resultSearch = this.search.searchProcess(wordFromBuffer);
+		SearchEntity resultSearch = this.search.searchProcess(wordFromBuffer);
 		
 		if(resultSearch.getTranslate().length() <= 0){
 			return Search.EMPTY_REZULT;
@@ -159,7 +159,7 @@ public class TranslateProcessManager {
 	
 	private int ifWardAlreadyInUserLiust(String searchWord){
 		for(int ix = 0; ix < this.boxAdapter.getCount(); ++ix){
-			SearchEnteti temp = (SearchEnteti) this.boxAdapter.getItem(ix);
+			SearchEntity temp = (SearchEntity) this.boxAdapter.getItem(ix);
 			if(temp.getExp().equals(searchWord)){
 				return ix;
 			}
@@ -171,10 +171,10 @@ public class TranslateProcessManager {
 	private void saveNewWord(String searchWard){
 		SDCardFile defaultFile = new SDCardFile();
 		
-		defaultFile.setFileName(this.sessionMAnager.getSource()
+		defaultFile.setFileName(this.sessionManager.getSource()
 				.defaultCurrentBook());
 
-		this.sessionMAnager.getSource().writeFile(defaultFile,
+		this.sessionManager.getSource().writeFile(defaultFile,
 				searchWard + "\n");
 		
 		defaultFile = null;

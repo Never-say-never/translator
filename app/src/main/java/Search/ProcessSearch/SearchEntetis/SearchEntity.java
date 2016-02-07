@@ -1,6 +1,6 @@
 package Search.ProcessSearch.SearchEntetis;
 
-public interface SearchEnteti {
+public interface SearchEntity {
 
 	public abstract void setExp(String entety);
 	

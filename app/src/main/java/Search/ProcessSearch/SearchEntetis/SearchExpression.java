@@ -1,6 +1,6 @@
 package Search.ProcessSearch.SearchEntetis;
 
-public class SearchExpression implements SearchEnteti {
+public class SearchExpression implements SearchEntity {
 
 	@Override
 	public void setExp(String entety) {
