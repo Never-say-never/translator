@@ -8,5 +8,7 @@
 	<string name="status">status</string>
 	<string name="search">Search</string>
 	<string name="x">x</string>
+    <string name="action_debugger">Debugger</string>
+    <string name="Debugger">Application debugger</string>
 
 </resources>

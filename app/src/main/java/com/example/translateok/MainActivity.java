@@ -1,9 +1,11 @@
 package com.example.translateok;
 
 import AppliacationManager.TranslateProcessManager;
+
 import android.app.ProgressDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -62,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
             	String exp = testText.getText().toString();
             	if(translateProcess.checkExpression(exp.trim())){
-            		String test = translateProcess.search(exp);
+            		String test = translateProcess.search(exp.trim());
             		TranslateProcessManager.toastManager(exp + " - " + test);
             	}else{
             		TranslateProcessManager.toastManager("Incorrect input!");
@@ -97,7 +99,12 @@ public class MainActivity extends ActionBarActivity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
+		}else if(id == R.id.debugger){
+			TranslateProcessManager.toastManager("go go debugger!");
+			Intent intent = new Intent(MainActivity.this, DebugActivity.class);
+			startActivity(intent);
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 

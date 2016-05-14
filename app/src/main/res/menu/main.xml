@@ -9,4 +9,10 @@
         android:title="@string/action_settings"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/debugger"
+        android:orderInCategory="200"
+        android:title="@string/action_debugger"
+        app:showAsAction="never"/>
+
 </menu>

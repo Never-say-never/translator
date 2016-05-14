@@ -68,10 +68,11 @@ public class HistoryListAdapter extends BaseAdapter {
 
 		final LinearLayout lrno_a = (LinearLayout) view
 				.findViewById(R.id.linearLayout2);
-		
+
+		System.out.println(" is :L: " + this.objects.get(position).getTranslate());
 		((TextView) view.findViewById(R.id.tvDescr)).setText(
-				this.objects.get(position).getExp() + " - " + 
-				this.objects.get(position).getTranslate());
+				this.objects.get(position).getExp() +
+						this.objects.get(position).getTranslate());
 		
 		((TextView) view.findViewById(R.id.tvPrice))
 				.setText("example1, example2, example3 ...");

@@ -29629,7 +29629,7 @@ opaline матовое
 opaque мрак      
 open =      
 open-minded непредубежденный      
-open-source open-source      
+open-sourceDriver open-sourceDriver
 openandshut очевидный      
 openarmed с      
 opener консервный      
@@ -38851,7 +38851,7 @@ soup-plate глубокая
 soup-spoon ложка      
 soup-ticket на      
 soupspoon ложка      
-source источник      
+sourceDriver источник
 sourdine сурдинка      
 sourdough закваска      
 sourrer кислее      

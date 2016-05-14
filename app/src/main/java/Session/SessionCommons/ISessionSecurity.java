@@ -10,9 +10,12 @@ public interface ISessionSecurity {
 	 * key for encode application dictionary tabs security part to not lose my
 	 * English dictionary because it's hard to get god formated CSV one.
 	 */
-	public final byte[] SALT = new byte[] { (byte) 0x47, (byte) 0x73,
-			(byte) 0x21, (byte) 0x8c, (byte) 0xae, (byte) 0xa8, (byte) 0xe1,
-			(byte) 0x99 };
+	public final byte[] SALT = new byte[] {
+			(byte) 0x47, (byte) 0x73,
+			(byte) 0x21, (byte) 0x8c,
+			(byte) 0xae, (byte) 0xa8,
+			(byte) 0xe1, (byte) 0x99
+	};
 	  
 	/*
 	 * specific type of Blowfish encrypt method
